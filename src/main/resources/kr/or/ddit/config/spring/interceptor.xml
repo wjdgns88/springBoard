@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Interceptors -->
+	<!-- 
+		? matches one character
+		* matches zero or more characters within a path segment
+		** match zero or more path segments
+	 -->
+	 <!-- localeResolver -->
+	 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+	 
+	 <mvc:interceptors>
+	 	<mvc:interceptor>
+	 		<mvc:mapping path="/**"/>
+	 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+	 			<property name="paramName" value="language"/>
+	 		</bean>
+	 	</mvc:interceptor>
+	 </mvc:interceptors>
+<!-- 	 <mvc:interceptors> -->
+<!-- 	 	<mvc:interceptor> -->
+<!-- 	 		<mvc:mapping path="/**"/> -->
+<!-- 	 		<mvc:exclude-mapping path="/login/view"/> -->
+<!-- 	 		<mvc:exclude-mapping path="/bootstrap/**"/> -->
+<!-- 	 		<mvc:exclude-mapping path="/css/**"/> -->
+<!-- 	 		<mvc:exclude-mapping path="/js/**"/> -->
+<!-- 	 		<bean id="profile" class="kr.or.ddit.interceptor.ProfileInterceptor"></bean> -->
+<!-- 	 	</mvc:interceptor> -->
+<!-- 	 </mvc:interceptors>  -->
+	
+</beans>

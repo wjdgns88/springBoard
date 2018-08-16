@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="basicLayout" template="/WEB-INF/views/tiles/basicLayout.jsp">
+		<put-attribute name="top" value="/css/common/top.jsp"/>
+		<put-attribute name="left" value="/css/common/left.jsp"/>
+		<put-attribute name="content" value=""/>
+	</definition>
+	
+	<definition name="main" extends="basicLayout">
+		<put-attribute name="content" value="/WEB-INF/views/tilesMain.jsp"/>
+	</definition>
+	
+	<definition name="studentList" extends="basicLayout">
+		<put-attribute name="content" value="/WEB-INF/views/student/tiles/list.jsp"/>
+	</definition>
+	
+	<definition name="studentDetail" extends="basicLayout">
+		<put-attribute name="content" value="/WEB-INF/views/student/tiles/detail.jsp"/>
+	</definition>
+	
+</tiles-definitions>
+
+
+<!-- 
+	kr.or.ddit.mvc.web.TilesController
+	
+	localhost:8280/tiles/main
+	
+	public String tilesMain(){
+		return "";				//tiles definition name
+	}
+ -->
